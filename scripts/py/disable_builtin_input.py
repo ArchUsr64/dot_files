@@ -1,4 +1,4 @@
-impor: subprocess
+import subprocess
 import os
 import time
 

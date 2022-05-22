@@ -11,10 +11,10 @@ set {
 
 font pango:monospace 10
 
-exec python $home/disabled_on_external_mouse.py
+exec python $home/disable_on_external_mouse.py
 
+output * bg #000000 solid_color
 #output * pos 0 0 mode --custom 720x400@60Hz
-output "*" bg             #000000 solid_color
 client.focused					#ffffff #ffffff #000000 #ff6666 #ffffff
 client.focused_inactive #444444 #444444 #ffffff #444444 #444444
 client.unfocused				#000000 #000000 #ffffff #000000 #000000

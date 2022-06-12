@@ -27,20 +27,8 @@ colors:
 font:
 
   normal:
-    family: monospace
+    family: Fira Code
     style: Regular
-
-  bold:
-    family: monospace
-    style: Bold
-
-  italic:
-    family: monospace
-    style: Italic
-
-  bold_italic:
-    family: monospace
-    style: Bold Italic
 
   size: 14.0
 

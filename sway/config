@@ -9,12 +9,13 @@ set {
     $menu               dmenu_run -fn 'pongo:monospace:bold:pixelsize=14' -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -p '>'
 }
 
-font pango:monospace 10
+font pango:FiraCode 8
 
-exec python $home/disable_on_external_mouse.py
+exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
+exec /bin/activate-linux
 
-output * bg #000000 solid_color
 #output * pos 0 0 mode --custom 720x400@60Hz
+output * bg #000000 solid_color
 client.focused					#ffffff #ffffff #000000 #ff6666 #ffffff
 client.focused_inactive #444444 #444444 #ffffff #444444 #444444
 client.unfocused				#000000 #000000 #ffffff #000000 #000000
@@ -32,6 +33,7 @@ exec swayidle -w \
     for_window [class="."] inhibit_idle fullscreen
     for_window [app_id="."] inhibit_idle fullscreen
 
+for_window [class="."] inhibit_idle fullscreen
 bindsym $mod+Shift+E mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
    bindsym {
@@ -133,7 +135,7 @@ mode "resize" {
 }
 
 bar {
-    font pongo:monospace 10
+    font Fira Code SemiBold 10
     position bottom
     mode hide
     status_command i3status

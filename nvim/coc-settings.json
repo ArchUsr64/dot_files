@@ -1,14 +1,48 @@
 {
-	"languageserver":{
-  "clangd": {
-    "command": "clangd",
-    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-  },
-	"wgsl":{
-		"command": "wgsl-analyzer",
-		"filetypes": ["wgsl"],
-    "rootPatterns": [".git", "wgsl"]
-	},
-	}
+  "languageserver":{
+    "clangd":{
+      "command":"clangd",
+      "rootPatterns":[
+        "compile_flags.txt",
+        "compile_commands.json"
+      ],
+      "filetypes":[
+        "c",
+        "cc",
+        "cpp",
+        "c++",
+        "objc",
+        "objcpp"
+      ]
+    },
+    "arduino":{
+      "command":"/home/tuxusr/Applications/arduino-language-server",
+      "rootPatterns":[
+        "*.ino"
+      ],
+      "filetypes":[
+        "arduino"
+      ],
+      "args":[
+        "-cli",
+        "/usr/bin/arduino-cli",
+        "-clangd",
+        "/usr/bin/clangd",
+        "-cli-config",
+        "/home/tuxusr/.arduino15/arduino-cli.yaml",
+        "-fqbn",
+        "arduino:avr:leonardo"
+      ]
+    },
+    "wgsl":{
+      "command":"wgsl-analyzer",
+      "filetypes":[
+        "wgsl"
+      ],
+      "rootPatterns":[
+        ".git",
+        "wgsl"
+      ]
+    }
+  }
 }

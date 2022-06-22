@@ -130,7 +130,7 @@ vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(
 nnoremap <silent> <leader>f :call <SID>format()<CR>
 
 function! s:format()
-  if &filetype == "wgsl"
+  if (&filetype == "wgsl" || &filetype == "arduino")
 		:ClangFormat
   else
 		:call CocActionAsync('format')

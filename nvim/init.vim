@@ -30,6 +30,7 @@ Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'DingDean/wgsl.vim'
+Plug 'tikhomirov/vim-glsl'
 Plug 'rhysd/vim-clang-format'
 call plug#end()
 

@@ -12,9 +12,10 @@ set {
 font pango:FiraCode 8
 
 exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
-exec /bin/activate-linux
 
-#output * pos 0 0 mode --custom 720x400@60Hz
+#output * pos 0 0 mode --custom 640x360@60Hz
+#output * pos 0 0 mode --custom 864x486@60Hz
+
 output * bg #000000 solid_color
 client.focused					#ffffff #ffffff #000000 #ff6666 #ffffff
 client.focused_inactive #444444 #444444 #ffffff #444444 #444444
@@ -37,7 +38,7 @@ for_window [class="."] inhibit_idle fullscreen
 bindsym $mod+Shift+E mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
    bindsym {
-        l exec swaymsg exit
+        l exec killall python && swaymsg exit
         r exec reboot
         s exec shutdown now
         Escape mode "default"

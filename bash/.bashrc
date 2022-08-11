@@ -21,4 +21,3 @@ alias afA='d chmod 777 /dev/ttyACM* && arduino-cli upload -p /dev/ttyACM* --fqbn
 alias ac='arduino-cli compile --fqbn arduino:avr:nano src'
 alias a='xhost +SI:localuser:root && d arduino'
 alias q='xhost +SI:localuser:root && cd && d ./altera/13.0sp1/quartus/bin/quartus --64bit'
-

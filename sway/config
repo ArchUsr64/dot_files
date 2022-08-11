@@ -4,7 +4,7 @@ set {
     $down               j
     $up                 k
     $right              l
-    $term               alacritty
+    $term               kitty
     $browser            chromium
     $menu               dmenu_run -fn 'pongo:monospace:bold:pixelsize=14' -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -p '>'
 }

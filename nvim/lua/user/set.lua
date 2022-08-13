@@ -31,6 +31,7 @@ opt.expandtab = false
 
 opt.timeout = false
 opt.termguicolors = true
+opt.cursorline = true
 
 opt.splitbelow = true
 opt.splitright = true

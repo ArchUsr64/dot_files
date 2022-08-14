@@ -5,7 +5,7 @@ vim.g.maplocalleader = leader
 
 
 local function Map(m, k, v)
-    vim.keymap.set(m, k, v, { noremap = true, silent = true})
+	vim.keymap.set(m, k, v, { noremap = true, silent = true })
 end
 
 Map("n", "<leader>", "<Nop>")
@@ -15,6 +15,9 @@ Map("n", "<c-h>", "<c-w>h")
 Map("n", "<c-j>", "<c-w>j")
 Map("n", "<c-k>", "<c-w>k")
 Map("n", "<c-l>", "<c-w>l")
+Map("n", "H", "<cmd>bp<CR>")
+Map("n", "L", "<cmd>bn<CR>")
+Map("n", ";", "<cmd>e#<CR>")
 
 Map("i", "<c-a>", "<HOME>")
 Map("i", "<c-j>", "<c-e>")
@@ -29,8 +32,11 @@ Map("i", "(", "()<LEFT>")
 Map("i", "'", "''<LEFT>")
 Map("i", "\"", "\"\"<LEFT>")
 
+-- Telescope
+Map("n", "tf", "<cmd>Telescope find_files<cr>")
+
 local function Map(m, k, v)
-    vim.keymap.set(m, k, v, { noremap = true, silent = true, buffer = 0})
+	vim.keymap.set(m, k, v, { noremap = true, silent = true, buffer = 0 })
 end
 
 function Lsp_maps()
@@ -44,4 +50,8 @@ function Lsp_maps()
 	Map("n", "<leader>rn", vim.lsp.buf.rename)
 	Map("n", "<leader>k", vim.diagnostic.open_float)
 	Map("n", "<leader>qf", vim.lsp.buf.code_action)
+	Map("n", "<leader>f", vim.lsp.buf.formatting)
 end
+
+--Plugin
+Map("n", "<leader>u", "<cmd>UndotreeToggle<CR>")

@@ -1,38 +1,43 @@
-local opt = vim.opt
+local vim = vim
 
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-opt.wrap = false
-opt.autowriteall = true
-opt.hlsearch = true
-opt.hidden = true
-opt.smartindent = true
-opt.swapfile = false
-opt.backup = false
-opt.undodir = "/home/tuxusr/.nvim/undodir"
-opt.undofile = true
-opt.scrolloff = 10
+vim.opt.wrap = false
+vim.opt.autowriteall = true
+vim.opt.hlsearch = true
+vim.opt.hidden = true
+vim.opt.smartindent = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = "/home/tuxusr/.nvim/undodir"
+vim.opt.undofile = true
+vim.opt.scrolloff = 10
 
-opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
-opt.relativenumber = true
-opt.number = true
+vim.opt.relativenumber = true
+vim.opt.number = true
 
-opt.mouse = "a"
-opt.signcolumn="yes"
-opt.colorcolumn = "100"
-opt.title = true
-opt.guifont = "Fira Code:h18"
+vim.opt.mouse = "a"
+vim.opt.signcolumn = "yes"
+vim.opt.colorcolumn = "100"
+vim.opt.title = true
+vim.opt.guifont = "Fira Code:h18"
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = false
+function fix_settings()
+	vim.opt.tabstop = 2
+	vim.opt.shiftwidth = 2
+	vim.opt.expandtab = false
 
-opt.timeout = false
-opt.termguicolors = true
-opt.cursorline = true
+	vim.opt.laststatus = 3
+end
 
-opt.splitbelow = true
-opt.splitright = true
-opt.laststatus = 3
+fix_settings()
+
+vim.opt.timeout = false
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true

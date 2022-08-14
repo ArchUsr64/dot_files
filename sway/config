@@ -1,15 +1,15 @@
 set {
-    $mod                Mod4
-    $left               h
-    $down               j
-    $up                 k
-    $right              l
-    $term               kitty
-    $browser            chromium
-    $menu               dmenu_run -fn 'pongo:monospace:bold:pixelsize=14' -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -p '>'
+	$mod Mod4
+	$left h
+	$down j
+	$up k
+	$right l
+	$term kitty
+	$browser chromium
+	$menu dmenu_run -fn 'pongo:FiraCode:Retina:pixelsize=16' -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -p 'B=>'
 }
 
-font pango:FiraCode 8
+font pango:FiraCode 10
 
 exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
 
@@ -17,137 +17,137 @@ exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
 #output * pos 0 0 mode --custom 864x486@60Hz
 
 output * bg #000000 solid_color
-client.focused					#ffffff #ffffff #000000 #ff6666 #ffffff
+client.focused #ffffff #ffffff #000000 #ff6666 #ffffff
 client.focused_inactive #444444 #444444 #ffffff #444444 #444444
-client.unfocused				#000000 #000000 #ffffff #000000 #000000
-client.urgent           #ff6666 #ff6666 #000000 #ff6666 #ff6666
-client.background       #000000
+client.unfocused #000000 #000000 #ffffff #000000 #000000
+client.urgent #ff6666 #ff6666 #000000 #ff6666 #ff6666
+client.background #000000
 
 input type:touchpad tap enabled
 #input type:touchpad events disabled_on_external_mouse
 
 bindsym $mod+G exec swaylock -f -c 000000
 exec swayidle -w \
-    timeout 120 'swaylock -f -c 000000' \
-    timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -c 000000'
-    for_window [class="."] inhibit_idle fullscreen
-    for_window [app_id="."] inhibit_idle fullscreen
+	timeout 120 'swaylock -f -c 000000' \
+	timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 000000'
+	for_window [class="."] inhibit_idle fullscreen
+	for_window [app_id="."] inhibit_idle fullscreen
 
 for_window [class="."] inhibit_idle fullscreen
 bindsym $mod+Shift+E mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
-   bindsym {
-        l exec killall python && swaymsg exit
-        r exec reboot
-        s exec shutdown now
-        Escape mode "default"
-        Return mode "default"
-    }
+	bindsym {
+		l exec killall python && swaymsg exit
+		r exec reboot
+		s exec shutdown now
+		Escape mode "default"
+		Return mode "default"
+	}
 }
 
 floating_modifier $mod normal
 
 bindsym {
 	XF86MonBrightnessDown exec light -U 2
-    XF86MonBrightnessUP exec light -A 2
-    XF86AudioPlay exec playerctl play-pause
-    XF86AudioPrev exec playerctl previous
-    XF86AudioNext exec playerctl next
-Shift+XF86AudioMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-    XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-    XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+	XF86MonBrightnessUP exec light -A 2
+	XF86AudioPlay exec playerctl play-pause
+	XF86AudioPrev exec playerctl previous
+	XF86AudioNext exec playerctl next
+	Shift+XF86AudioMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+	XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+	XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-    $mod+b exec $browser
-    $mod+t exec $term
-    $mod+d exec $menu
+	$mod+b exec $browser
+	$mod+t exec $term
+	$mod+d exec $menu
 
-    $mod+q kill
-    $mod+Shift+r reload
-    $mod+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+	$mod+q kill
+	$mod+Shift+r reload
+	$mod+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
-    $mod+$left focus left
-    $mod+$down focus down
-    $mod+$up focus up
-    $mod+$right focus right
-    $mod+Shift+$left move left
-    $mod+Shift+$down move down
-    $mod+Shift+$up move up
-    $mod+Shift+$right move right
+	$mod+$left focus left
+	$mod+$down focus down
+	$mod+$up focus up
+	$mod+$right focus right
+	$mod+Shift+$left move left
+	$mod+Shift+$down move down
+	$mod+Shift+$up move up
+	$mod+Shift+$right move right
 
-    $mod+Left focus left
-    $mod+Down focus down
-    $mod+Up focus up
-    $mod+Right focus right
-    $mod+Shift+Left move left
-    $mod+Shift+Down move down
-    $mod+Shift+Up move up
-    $mod+Shift+Right move right
+	$mod+Left focus left
+	$mod+Down focus down
+	$mod+Up focus up
+	$mod+Right focus right
+	$mod+Shift+Left move left
+	$mod+Shift+Down move down
+	$mod+Shift+Up move up
+	$mod+Shift+Right move right
 
-    $mod+1 workspace number 1
-    $mod+2 workspace number 2
-    $mod+3 workspace number 3
-    $mod+4 workspace number 4
-    $mod+5 workspace number 5
-    $mod+6 workspace number 6
-    $mod+7 workspace number 7
-    $mod+8 workspace number 8
-    $mod+9 workspace number 9
-    $mod+0 workspace number 10
+	$mod+1 workspace number 1
+	$mod+2 workspace number 2
+	$mod+3 workspace number 3
+	$mod+4 workspace number 4
+	$mod+5 workspace number 5
+	$mod+6 workspace number 6
+	$mod+7 workspace number 7
+	$mod+8 workspace number 8
+	$mod+9 workspace number 9
+	$mod+0 workspace number 10
 
-    $mod+Shift+1 move container to workspace number 1
-    $mod+Shift+2 move container to workspace number 2
-    $mod+Shift+3 move container to workspace number 3
-    $mod+Shift+4 move container to workspace number 4
-    $mod+Shift+5 move container to workspace number 5
-    $mod+Shift+6 move container to workspace number 6
-    $mod+Shift+7 move container to workspace number 7
-    $mod+Shift+8 move container to workspace number 8
-    $mod+Shift+9 move container to workspace number 9
-    $mod+Shift+0 move container to workspace number 10
+	$mod+Shift+1 move container to workspace number 1
+	$mod+Shift+2 move container to workspace number 2
+	$mod+Shift+3 move container to workspace number 3
+	$mod+Shift+4 move container to workspace number 4
+	$mod+Shift+5 move container to workspace number 5
+	$mod+Shift+6 move container to workspace number 6
+	$mod+Shift+7 move container to workspace number 7
+	$mod+Shift+8 move container to workspace number 8
+	$mod+Shift+9 move container to workspace number 9
+	$mod+Shift+0 move container to workspace number 10
 
-    $mod+v splith
-    $mod+c splitv
-    $mod+w layout tabbed
-    $mod+e layout toggle split
-    $mod+tab workspace back_and_forth
-    $mod+prior workspace prev
-    $mod+next workspace next
-    $mod+f fullscreen
-    $mod+Shift+space floating toggle
-    $mod+space focus mode_toggle
-    $mod+x exec wl-gammactl -c -1.000 -b 2.000 -g 1.000
+	$mod+v splith
+	$mod+c splitv
+	$mod+w layout tabbed
+	$mod+e layout toggle split
+	$mod+tab workspace back_and_forth
+	$mod+prior workspace prev
+	$mod+next workspace next
+	$mod+f fullscreen
+	$mod+Shift+space floating toggle
+	$mod+space focus mode_toggle
+	$mod+x exec wl-gammactl -c -1.000 -b 2.000 -g 1.000
 }
 
 bindsym $mod+r mode "resize"
 mode "resize" {
-    bindsym {
-        $left resize shrink width 10px
-        $down resize grow height 10px
-        $up resize shrink height 10px
-        $right resize grow width 10px
+	bindsym {
+		$left resize shrink width 10px
+		$down resize grow height 10px
+		$up resize shrink height 10px
+		$right resize grow width 10px
 
-        Return mode "default"
-        Escape mode "default"
-								Space mode "default"
-								Tab mode "default"
-    }
+		Return mode "default"
+		Escape mode "default"
+		Space mode "default"
+		Tab mode "default"
+	}
 }
 
 bar {
-    font Fira Code SemiBold 10
-    position bottom
-    mode hide
-    status_command i3status
+	font Fira Code Retina 10
+	position bottom
+	mode hide
+	status_command i3status
 
-    colors {
-        statusline          #ffffff
-        background          #000000
-								focused_workspace   #ffffff #ffffff #000000
-        inactive_workspace  #444444 #444444 #ffffff
-        urgent_workspace    #ff6666 #ff6666 #000000
-    }
+	colors {
+	statusline #ffffff
+	background #000000
+	focused_workspace #ffffff #ffffff #000000
+	inactive_workspace #444444 #444444 #ffffff
+	urgent_workspace #ff6666 #ff6666 #000000
+	}
 }
 
 include /etc/sway/config.d/*

@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
 	}
 	use "907th/vim-auto-save"
 	use "farmergreg/vim-lastplace"
+	use 'mhinz/vim-signify'
 
 	-- Telescope
 	use {

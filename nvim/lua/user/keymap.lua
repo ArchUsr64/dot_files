@@ -18,6 +18,7 @@ Map("n", "<c-l>", "<c-w>l")
 Map("n", "H", "<cmd>bp<CR>")
 Map("n", "L", "<cmd>bn<CR>")
 Map("n", ";", "<cmd>e#<CR>")
+Map("n", "<leader>c", "<cmd>bdelete<CR>")
 
 Map("i", "<c-a>", "<HOME>")
 Map("i", "<c-j>", "<c-e>")
@@ -32,8 +33,14 @@ Map("i", "(", "()<LEFT>")
 Map("i", "'", "''<LEFT>")
 Map("i", "\"", "\"\"<LEFT>")
 
+Map("n", "<leader>n", "<cmd>nohl<cr>")
+
+Map("n", "<leader>b", "<cmd>NvimTreeToggle<cr>")
 -- Telescope
 Map("n", "tf", "<cmd>Telescope find_files<cr>")
+Map("n", "ty", "<cmd>Telescope frecency<cr>")
+Map("n", "tb", "<cmd>Telescope file_browser<cr>")
+Map("n", "tl", "<cmd>Telescope live_grep<cr>")
 
 local function Map(m, k, v)
 	vim.keymap.set(m, k, v, { noremap = true, silent = true, buffer = 0 })

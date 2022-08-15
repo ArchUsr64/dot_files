@@ -3,6 +3,7 @@ local vim = vim
 vim.cmd [[packadd packer.nvim]]
 
 require('lualine').setup()
+require('nvim-tree').setup()
 require('telescope').load_extension("fzf")
 require "telescope".load_extension("frecency")
 require "telescope".load_extension("file_browser")
@@ -60,4 +61,5 @@ return require('packer').startup(function(use)
 		requires = { "tami5/sqlite.lua" }
 	}
 	use "nvim-telescope/telescope-file-browser.nvim"
+	use "kyazdani42/nvim-tree.lua"
 end)

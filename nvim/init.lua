@@ -11,12 +11,17 @@ require("user.rust_tools")
 require("user.set")
 require("user.color")
 
+vim.cmd("autocmd! CursorHold,CursorHoldI * let @/='\\<'.expand('<cword>').'\\>'")
 nvim_lsp.sumneko_lua
 		.setup {
 			on_attach = on_attach,
 		}
 
 nvim_lsp.clangd.setup {
+	on_attach = on_attach,
+}
+
+nvim_lsp.jsonls.setup {
 	on_attach = on_attach,
 }
 

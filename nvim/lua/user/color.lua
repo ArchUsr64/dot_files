@@ -14,10 +14,4 @@ vim.cmd("highlight CursorLine guibg=#222222")
 vim.cmd("highlight CursorLineNr guifg=#ffffff guibg=#222222")
 vim.cmd("highlight LineNrAbove guifg=#888888")
 vim.cmd("highlight LineNrBelow guifg=#888888")
-
---[[
-nvim_lsp.sumneko_lua
-		.setup {
-			on_attach = on_attach,
-		}
-		]]
+vim.cmd("highlight Visual guibg=#444444")

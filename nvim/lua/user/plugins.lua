@@ -2,6 +2,19 @@ local vim = vim
 
 vim.cmd [[packadd packer.nvim]]
 
+require 'nvim-treesitter.configs'.setup {
+	ensure_installed = { "c", "lua", "rust", "cpp", "json" },
+	sync_install = false,
+	auto_install = true,
+	ignore_install = { "javascript" },
+
+	highlight = {
+		enable = true,
+		disable = {},
+		additional_vim_regex_highlighting = false,
+	},
+}
+
 require('lualine').setup()
 require('nvim-tree').setup()
 require('telescope').load_extension("fzf")
@@ -61,5 +74,9 @@ return require('packer').startup(function(use)
 		requires = { "tami5/sqlite.lua" }
 	}
 	use "nvim-telescope/telescope-file-browser.nvim"
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	}
 	use "kyazdani42/nvim-tree.lua"
 end)

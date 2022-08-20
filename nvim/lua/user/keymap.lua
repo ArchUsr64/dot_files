@@ -10,6 +10,7 @@ end
 
 Map("n", "<leader>", "<Nop>")
 Map("n", "<BS>", "<Nop>")
+Map("i", "<S-BS>", "<DEL>")
 
 Map("n", "<c-h>", "<c-w>h")
 Map("n", "<c-j>", "<c-w>j")

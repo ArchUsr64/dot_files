@@ -22,8 +22,6 @@ require "telescope".load_extension("frecency")
 require "telescope".load_extension("file_browser")
 require('Comment').setup()
 vim.cmd("let g:Hexokinase_highlighters = ['foreground']")
-vim.cmd("let g:rainbow_conf = {'operators': '_\\.\\|,\\|;\\|:_',}")
-vim.cmd("let g:rainbow_active = 1")
 vim.cmd("let g:auto_save = 1")
 vim.cmd("let g:auto_save_silent = 1")
 vim.cmd("let g:auto_save_write_all_buffers = 1")
@@ -44,7 +42,6 @@ return require('packer').startup(function(use)
 	use 'mfussenegger/nvim-dap'
 
 	use { "RRethy/vim-hexokinase", run = 'make hexokinase' }
-	use "luochen1990/rainbow"
 	use { 'hrsh7th/nvim-cmp' }
 	use { 'hrsh7th/cmp-buffer' }
 	use { 'hrsh7th/cmp-path' }

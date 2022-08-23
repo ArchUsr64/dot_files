@@ -26,7 +26,7 @@ client.background #000000
 input type:touchpad tap enabled
 #input type:touchpad events disabled_on_external_mouse
 
-bindsym $mod+G exec swaylock -f -c 000000
+bindsym $mod+G exec swaylock -f -c ffffff
 exec swayidle -w \
 	timeout 120 'swaylock -f -c 000000' \
 	timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \

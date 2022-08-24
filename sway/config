@@ -6,10 +6,10 @@ set {
 	$right l
 	$term kitty
 	$browser chromium
-	$menu dmenu_run -fn 'pongo:FiraCode:Retina:pixelsize=16' -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -p 'B=>'
+	$menu dmenu_run -fn 'Fira Code SemiBold-10' -nb '#000000' -nf '#00ff00' -sb '#00ff00' -sf '#000000' -p 'B==>'
 }
 
-font pango:FiraCode 10
+font pango:Fira Code Retina 8
 
 exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
 
@@ -17,9 +17,9 @@ exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
 #output * pos 0 0 mode --custom 864x486@60Hz
 
 output * bg #000000 solid_color
-client.focused #ffffff #ffffff #000000 #ff6666 #ffffff
-client.focused_inactive #444444 #444444 #ffffff #444444 #444444
-client.unfocused #000000 #000000 #ffffff #000000 #000000
+client.focused #66ff66 #66ff66 #000000 #ff6666 #66ff66
+client.focused_inactive #66ffff #66ffff #000000 #66ffff #66ffff
+client.unfocused #ffffff #ffffff #000000 #ffffff #ffffff
 client.urgent #ff6666 #ff6666 #000000 #ff6666 #ff6666
 client.background #000000
 
@@ -28,9 +28,9 @@ input type:touchpad tap enabled
 
 bindsym $mod+G exec swaylock -f -c ffffff
 exec swayidle -w \
-	timeout 120 'swaylock -f -c 000000' \
+	timeout 120 'swaylock -f -c ffffff' \
 	timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-	before-sleep 'swaylock -f -c 000000'
+	before-sleep 'swaylock -f -c ffffff'
 	for_window [class="."] inhibit_idle fullscreen
 	for_window [app_id="."] inhibit_idle fullscreen
 
@@ -144,10 +144,10 @@ bar {
 	colors {
 	statusline #ffffff
 	background #000000
-	focused_workspace #ffffff #ffffff #000000
+	focused_workspace #66ff66 #66ff66 #000000
 	inactive_workspace #444444 #444444 #ffffff
 	urgent_workspace #ff6666 #ff6666 #000000
 	}
 }
 
-include /etc/sway/config.d/*
+																										include /etc/sway/config.d/*

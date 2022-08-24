@@ -1,0 +1,13 @@
+reverse = true
+summary = true
+warp = true
+[keybindings]
+k = "scroll-lines(-1)"
+j = "scroll-lines(1)"
+g = "scroll-to-top"
+h = "back"
+shift-g = "scroll-to-bottom"
+shift-F9 = "toggle-backtrace"
+ctrl-r = "toggle-raw-output"
+ctrl-u = "scroll-page(-1)"
+ctrl-d = "scroll-page(1)"

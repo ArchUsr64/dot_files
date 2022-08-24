@@ -2,6 +2,35 @@ local vim = vim
 
 vim.cmd [[packadd packer.nvim]]
 
+require("lsp-inlayhints").setup(
+	{
+		inlay_hints = {
+			parameter_hints = {
+				show = true,
+				prefix = "<-",
+				separator = ", ",
+				remove_colon_start = false,
+				remove_colon_end = true,
+			},
+			type_hints = {
+				-- type and other hints
+				show = true,
+				prefix = "",
+				separator = ", ",
+				remove_colon_start = false,
+				remove_colon_end = false,
+			},
+			only_current_line = false,
+			-- separator between types and parameter hints. Note that type hints are
+			-- shown before parameter
+			labels_separator = " | ",
+			max_len_align = false,
+			max_len_align_padding = 1,
+			highlight = "LspInlayHint",
+		},
+		debug_mode = false,
+	}
+)
 require 'nvim-treesitter.configs'.setup {
 	ensure_installed = { "c", "lua", "rust", "cpp", "json" },
 	sync_install = false,
@@ -35,7 +64,6 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 	use 'neovim/nvim-lspconfig'
-	use 'simrat39/rust-tools.nvim'
 
 	-- Debugging
 	use 'nvim-lua/plenary.nvim'

@@ -1,7 +1,7 @@
 local vim = vim
 
+require('gitsigns').setup()
 vim.cmd [[packadd packer.nvim]]
-
 require("lsp-inlayhints").setup(
 	{
 		inlay_hints = {
@@ -32,7 +32,7 @@ require("lsp-inlayhints").setup(
 	}
 )
 require 'nvim-treesitter.configs'.setup {
-	ensure_installed = { "c", "lua", "rust", "cpp", "json" },
+	ensure_installed = { "c", "lua", "rust", "cpp", "json", "verilog" },
 	sync_install = false,
 	auto_install = true,
 	ignore_install = { "javascript" },
@@ -86,7 +86,6 @@ return require('packer').startup(function(use)
 	}
 	use "907th/vim-auto-save"
 	use "farmergreg/vim-lastplace"
-	use 'mhinz/vim-signify'
 
 	-- Telescope
 	use {
@@ -104,4 +103,6 @@ return require('packer').startup(function(use)
 		run = ':TSUpdate'
 	}
 	use "kyazdani42/nvim-tree.lua"
+	use "lvimuser/lsp-inlayhints.nvim"
+	use "lewis6991/gitsigns.nvim"
 end)

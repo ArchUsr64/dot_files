@@ -13,10 +13,17 @@ require("user.set")
 require("user.color")
 
 vim.cmd("autocmd! CursorHold,CursorHoldI * let @/='\\<'.expand('<cword>').'\\>'")
+vim.cmd("autocmd BufRead,BufNewFile *.scad set filetype=openscad")
+
 nvim_lsp.sumneko_lua
 		.setup {
 			on_attach = on_attach,
 		}
+
+nvim_lsp.openscad_ls.setup {
+	single_file_support = true,
+	on_attach = on_attach,
+}
 
 nvim_lsp.clangd.setup {
 	on_attach = on_attach,

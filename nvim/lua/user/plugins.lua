@@ -47,7 +47,6 @@ require 'nvim-treesitter.configs'.setup {
 require('lualine').setup()
 require('nvim-tree').setup()
 require('telescope').load_extension("fzf")
-require "telescope".load_extension("frecency")
 require "telescope".load_extension("file_browser")
 require('Comment').setup()
 vim.cmd("let g:Hexokinase_highlighters = ['foreground']")
@@ -93,10 +92,6 @@ return require('packer').startup(function(use)
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-	use {
-		"nvim-telescope/telescope-frecency.nvim",
-		requires = { "tami5/sqlite.lua" }
-	}
 	use "nvim-telescope/telescope-file-browser.nvim"
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -105,4 +100,6 @@ return require('packer').startup(function(use)
 	use "kyazdani42/nvim-tree.lua"
 	use "lvimuser/lsp-inlayhints.nvim"
 	use "lewis6991/gitsigns.nvim"
+	use "sirtaj/vim-openscad"
+	use "rhysd/vim-clang-format"
 end)

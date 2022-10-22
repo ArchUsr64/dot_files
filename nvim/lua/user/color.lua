@@ -1,7 +1,7 @@
 local vim = vim
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	command = "silent! lua vim.highlight.on_yank({timeout=150})",
+	command = "silent! lua vim.highlight.on_yank({timeout=100})",
 })
 
 vim.cmd("set list listchars=tab:\\│\\ ,trail:")
@@ -51,6 +51,9 @@ function Fix_color()
 	vim.cmd("hi GitSignsAdd guifg=#008800 guibg=#88dd88")
 	vim.cmd("hi lualine_b_diff_added_insert gui=italic guifg=#008800")
 	vim.cmd("hi lualine_b_diff_added_normal gui=italic guifg=#008800")
+
+	vim.cmd("hi DiagnosticFloatingInfo guifg=#008800")
+	vim.cmd("hi DiagnosticFloatingHint guifg=#008800")
 end
 
 Fix_color()

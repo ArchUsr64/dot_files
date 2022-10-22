@@ -18,7 +18,6 @@ Map("n", "<c-k>", "<c-w>k")
 Map("n", "<c-l>", "<c-w>l")
 Map("n", "H", "<cmd>bp<CR>")
 Map("n", "L", "<cmd>bn<CR>")
-Map("n", ";", "<cmd>e#<CR>")
 Map("n", "<leader>c", "<cmd>bdelete<CR>")
 
 Map("i", "<c-a>", "<HOME>")
@@ -31,10 +30,11 @@ Map("i", "<c-BS>", "<c-w>")
 Map("i", "{", "{}<LEFT>")
 Map("i", "[", "[]<LEFT>")
 Map("i", "(", "()<LEFT>")
-Map("i", "'", "''<LEFT>")
 Map("i", "\"", "\"\"<LEFT>")
 
 Map("n", "<leader>n", "<cmd>nohl<cr>")
+
+Map("n", "<leader>f", "<cmd>ClangFormat<cr>")
 
 Map("n", "<leader>b", "<cmd>NvimTreeToggle<cr>")
 -- Telescope
@@ -58,7 +58,12 @@ function Lsp_maps()
 	Map("n", "<leader>rn", vim.lsp.buf.rename)
 	Map("n", "<leader>k", vim.diagnostic.open_float)
 	Map("n", "<leader>qf", vim.lsp.buf.code_action)
-	Map("n", "<leader>f", vim.lsp.buf.formatting)
+	vim.cmd([[if (&filetype == "openscad" || &filetype == "arduino")
+	echo("Bruh")
+	noremap <leader>f :ClangFormat<CR>
+else
+	:lua vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, {noremap = true, silent = true, buffer = 0})
+endif ]])
 end
 
 --Plugin

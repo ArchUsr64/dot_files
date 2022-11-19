@@ -62,7 +62,7 @@ function Lsp_maps()
 	echo("Bruh")
 	noremap <leader>f :ClangFormat<CR>
 else
-	:lua vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, {noremap = true, silent = true, buffer = 0})
+	:lua vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {noremap = true, silent = true, buffer = 0})
 endif ]])
 end
 

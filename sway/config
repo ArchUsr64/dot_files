@@ -23,7 +23,10 @@ client.unfocused #ffffff #ffffff #000000 #ffffff #ffffff
 client.urgent #ff6666 #ff6666 #000000 #ff6666 #ff6666
 client.background #000000
 
-input type:touchpad tap enabled
+input type:touchpad {
+	tap enabled
+	natural_scroll enabled
+}
 #input type:touchpad events disabled_on_external_mouse
 
 bindsym $mod+G exec swaylock -f -c ffffff

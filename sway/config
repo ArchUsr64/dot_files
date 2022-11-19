@@ -5,8 +5,8 @@ set {
 	$up k
 	$right l
 	$term kitty
-	$menu dmenu_run -fn 'Fira Code SemiBold-10' -nb '#000000' -nf '#00ff00' -sb '#00ff00' -sf '#000000' -p 'B==>'
 	$browser firefox
+	$menu dmenu_run -fn 'Fira Code SemiBold-12' -nb '#66ff66' -nf '#000000' -sb '#ff6666' -sf '#000000' -p '' -b
 }
 
 font pango:Fira Code Retina 8

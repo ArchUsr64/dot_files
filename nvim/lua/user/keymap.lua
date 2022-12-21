@@ -35,6 +35,7 @@ Map("i", "\"", "\"\"<LEFT>")
 Map("n", "<leader>n", "<cmd>nohl<cr>")
 
 Map("n", "<leader>f", "<cmd>ClangFormat<cr>")
+Map("n", "<leader>x", "<cmd>x<cr>")
 
 Map("n", "<leader>b", "<cmd>NvimTreeToggle<cr>")
 -- Telescope

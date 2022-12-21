@@ -27,9 +27,12 @@ input type:touchpad {
 	tap enabled
 	natural_scroll enabled
 }
+input type:keyboard {
+	xkb_options caps:escape
+}
 #input type:touchpad events disabled_on_external_mouse
 
-bindsym $mod+shift+g exec swaylock -f -c 66ffff
+bindsym $mod+shift+g exec swaylock -f -c ffffff
 exec swayidle -w \
 	timeout 120 'swaylock -f -c ffffff' \
 	timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
@@ -137,6 +140,9 @@ mode "resize" {
 		Tab mode "default"
 	}
 }
+
+default_border pixel
+gaps inner 1
 
 bar {
 	font Fira Code SemiBold 10

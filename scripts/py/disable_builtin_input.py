@@ -7,7 +7,7 @@ internal_input_enabled = True
 
 while (True):
        try:
-               command_output = subprocess.check_output("swaymsg -t get_inputs | grep 12x4_Nugget", shell = True);
+               command_output = subprocess.check_output("swaymsg -t get_inputs | grep Cartel", shell = True);
        except Exception:
                command_output = ""
        if (command_output == ""):

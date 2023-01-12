@@ -3,11 +3,12 @@ theme = "emacs"
 [editor]
 line-number = "relative"
 cursorline = true
+auto-format = false
 auto-save = true
+idle-save = true
+idle-timeout = 50
 rulers = [100]
 
 [editor.cursor-shape]
 insert = "bar"
 
-[editor.indent-guides]
-skip_levels = 1

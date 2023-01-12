@@ -1,5 +1,5 @@
 set {
-	$mod Mod4
+	$mod Mod1
 	$left h
 	$down j
 	$up k
@@ -11,17 +11,20 @@ set {
 
 font pango:Fira Code Retina 8
 
-exec python /home/tuxusr/dot_files/scripts/py/disable_builtin_input.py
+exec python $HOME/dot_files/scripts/py/disable_builtin_input.py
 
 #output * pos 0 0 mode --custom 640x360@60Hz
 #output * pos 0 0 mode --custom 864x486@60Hz
 
-output * bg #000000 solid_color
+output "*" bg $HOME/Desktop/bliss-windows-png.png fill
+
 client.focused #66ff66 #66ff66 #000000 #ff6666 #66ff66
 client.focused_inactive #66ffff #66ffff #000000 #66ffff #66ffff
 client.unfocused #ffffff #ffffff #000000 #ffffff #ffffff
 client.urgent #ff6666 #ff6666 #000000 #ff6666 #ff6666
 client.background #000000
+
+gaps inner 5
 
 input type:touchpad {
 	tap enabled
@@ -32,7 +35,7 @@ input type:keyboard {
 }
 #input type:touchpad events disabled_on_external_mouse
 
-bindsym $mod+shift+g exec swaylock -f -c ffffff
+bindsym $mod+shift+g exec swaylock -f -c ffffff44
 exec swayidle -w \
 	timeout 120 'swaylock -f -c ffffff' \
 	timeout 180 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
@@ -64,6 +67,8 @@ bindsym {
 	XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 	XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 	XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+	$mod exec $term
 
 	$mod+b exec $browser
 	$mod+t exec $term
@@ -117,7 +122,7 @@ bindsym {
 	$mod+c splitv
 	$mod+w layout tabbed
 	$mod+e layout toggle split
-	$mod+tab workspace back_and_forth
+	$mod+g workspace back_and_forth
 	$mod+prior workspace prev
 	$mod+next workspace next
 	$mod+f fullscreen
@@ -142,9 +147,9 @@ mode "resize" {
 }
 
 default_border pixel
-gaps inner 1
 
 bar {
+	modifier Mod1
 	font Fira Code SemiBold 10
 	position top
 	mode hide

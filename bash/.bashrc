@@ -1,4 +1,4 @@
-export PS1="\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;10m\]\t\[$(tput sgr0)\]{\[$(tput sgr0)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;27m\]\l\[$(tput sgr0)\]\[\033[38;5;5m\]\h\[$(tput sgr0)\]}\[$(tput sgr0)\]\[\033[38;5;130m\]\w\[$(tput sgr0)\]\[\033[38;5;2m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\n\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;10m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;10m\]\t\[$(tput sgr0)\]\[\033[38;5;5m\]\w\[$(tput sgr0)\]\[\033[38;5;2m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\n\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;10m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 PATH=$PATH:$HOME/.cargo/bin:.
 alias remove='/usr/bin/rm '
 alias arduino='export _JAVA_AWT_WM_NONREPARENTING=1 arduino'

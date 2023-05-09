@@ -1,0 +1,6 @@
+inherits = "emacs"
+"ui.virtual.inlay-hint" = {fg = "#dddd44", modifiers = ["italic"]} 
+"ui.virtual.whitespace" = "#dddddd"
+"ui.cursorline.primary" = {bg = "#f2f2f2"} 
+"ui.cursorline.secondary" = {bg = "#f2f2f2"} 
+comment = "#ff0000"

@@ -3,12 +3,34 @@ theme = "emacs"
 [editor]
 line-number = "relative"
 cursorline = true
-auto-format = false
+auto-format = true
 auto-save = true
-idle-save = true
-idle-timeout = 50
-rulers = [100]
+completion-trigger-len = 1
+idle-timeout = 0
+color-modes = true
+rulers = [80]
+lsp.display-inlay-hints = true
+
+[editor.whitespace]
+render.tab = "all"
+characters.tab = "│"
 
 [editor.cursor-shape]
 insert = "bar"
+select = "underline"
 
+[keys.normal]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
+[keys.select]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
+[keys.insert]
+"C-a" = "goto_line_start"
+"C-e" = "goto_line_end"
+"C-b" = "move_char_left"
+"C-f" = "move_char_right"
+"A-b" = "move_prev_word_start"
+"A-f" = "move_next_word_start"

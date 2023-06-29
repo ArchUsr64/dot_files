@@ -20,7 +20,7 @@ input {
 		natural_scroll enabled
 	}
 	type:keyboard {
-		xkb_options caps:backspace
+		xkb_options ctrl:nocaps
 	}
 	26985:4660:ArchUsr64_Rusty_Egboard scroll_factor 0.02
 }

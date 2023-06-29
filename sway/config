@@ -2,7 +2,7 @@ font pango:Fira Code Retina 8
 
 exec copyq
 
-set $refresh_i3status killall -SIGUSR1 i3status
+set $refresh_i3status killall -SIGUSR1 i3status-rs
 bindsym {
 	XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 	XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -113,10 +113,11 @@ bindsym {
 }
 
 bar {
+	font FiraCode SemiBold, 10
 	mode hide
 	position bottom
 	modifier $mod
-	status_command i3status
+	status_command i3status-rs
 }
 
 include /etc/sway/config.d/*

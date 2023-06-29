@@ -36,8 +36,8 @@ set {
 	$left h
 	$right l
 	$browser chromium
-	$terminal ajacritty
-	$menu /bin/`js /bin | fuzzel -I -d --layer=overlay --config=.config/fuzzel.ini`
+	$terminal alacritty
+	$menu /bin/`ls /bin | fuzzel -I -d --layer=overlay --config=.config/fuzzel.ini`
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
 }
 

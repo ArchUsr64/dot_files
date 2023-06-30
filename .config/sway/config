@@ -22,7 +22,10 @@ input {
 	type:keyboard {
 		xkb_options ctrl:nocaps
 	}
-	26985:4660:ArchUsr64_Rusty_Egboard scroll_factor 0.02
+	26985:4660:ArchUsr64_Rusty_Egboard {
+		scroll_button button2
+		scroll_method on_button_down
+	}
 }
 
 smart_borders on

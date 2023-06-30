@@ -3,7 +3,7 @@ export _JAVA_AWT_WM_NONREPARENTING="1"
 PATH=$PATH:$HOME/.cargo/bin:.
 alias remove='/usr/bin/rm '
 alias rm='trash '
-alias p='pacman '
+alias p='doas pacman '
 alias ls='ls --color=auto'
 alias d='doas '
 alias pt='ping google.com'

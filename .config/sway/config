@@ -1,6 +1,7 @@
 font pango:Fira Code Retina 8
 
 exec copyq
+exec $SHELL $HOME/dot_files/scripts/*
 
 set $refresh_i3status killall -SIGUSR1 i3status-rs
 bindsym {

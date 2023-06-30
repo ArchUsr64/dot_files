@@ -1,9 +1,15 @@
 #!/bin/bash
 
+sleep 2
+
 external_keyboard_connected=false
 internal_input_enabled=true
 
 while true; do
+    swaymsg
+    if [[ $? == 1 ]]; then
+        exit
+    fi
     command_output=$(swaymsg -t get_inputs | grep ArchUsr64_Rusty_Egboard)
     if [[ -z $command_output ]]; then
         external_keyboard_connected=false

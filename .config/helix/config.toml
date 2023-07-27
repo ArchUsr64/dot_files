@@ -10,6 +10,13 @@ idle-timeout = 0
 color-modes = true
 rulers = [80]
 lsp.display-inlay-hints = true
+gutters = ["diagnostics", "line-numbers", "diff"]
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+center = ["file-type", "workspace-diagnostics" , "version-control"]
+right = ["diagnostics", "selections", "position", "file-encoding", "position-percentage", "total-line-numbers"]
 
 [editor.whitespace]
 render.tab = "all"

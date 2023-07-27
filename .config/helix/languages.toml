@@ -1,3 +1,0 @@
-[[language]]
-name = "rust"
-indent = { tab-width = 2, unit = "  " }

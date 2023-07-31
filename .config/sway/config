@@ -38,6 +38,7 @@ set {
 	$terminal alacritty
 	$menu /bin/`ls /bin | fuzzel -I -d --layer=overlay --config=.config/fuzzel/fuzzel.ini`
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
+	$lock swaylock
 }
 
 floating_modifier $mod
@@ -75,6 +76,7 @@ bindsym {
 	$mod+v exec $browser
 	$mod+s exec $menu
 	$mod+Shift+s exec $screenshot
+	$mod+Shift+p exec $lock
 	$mod+Shift+e exec "swaynag -e bottom -y overlay -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'swaymsg exit'"
 
 	$mod+q kill

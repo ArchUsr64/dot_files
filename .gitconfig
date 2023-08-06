@@ -1,0 +1,11 @@
+[user]
+	name = ArchUsr64
+	email = anshulusr@gmail.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[core]
+	editor = helix

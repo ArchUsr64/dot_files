@@ -1,4 +1,4 @@
-font pango:Fira Code Retina 8
+font pango:Fira Code Retina 12
 
 exec copyq
 exec $SHELL $HOME/dot_files/scripts/*
@@ -114,7 +114,7 @@ bindsym {
 }
 
 bar {
-	font FiraCode SemiBold, 10
+	font FiraCode SemiBold, 12
 	mode hide
 	position bottom
 	modifier $mod

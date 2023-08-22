@@ -1,5 +1,5 @@
 [user]
-	name = ArchUsr64
+	name = Anshul
 	email = anshulusr@gmail.com
 [init]
 	defaultBranch = main
@@ -9,3 +9,11 @@
 	rebase = false
 [core]
 	editor = helix
+[sendemail]
+	confirm = auto
+	smtpServer = smtp.gmail.com
+	smtpServerPort = 587
+	smtpEncryption = tls
+	smtpUser = anshulusr@gmail.com
+[include]
+	path = .gmail_app_pass

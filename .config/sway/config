@@ -122,7 +122,7 @@ bindsym {
 bar {
 	font FiraCode SemiBold, 12
 	mode hide
-	position bottom
+	position top
 	modifier $mod
 	status_command i3status-rs
 }

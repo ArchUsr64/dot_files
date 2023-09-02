@@ -12,7 +12,7 @@ colors:
     blue: '0x2222ff'
     magenta: '0xff22ff'
     cyan: '0x22ffff'
-    white: '0xaaaaaa'
+    white: '0xcccccc'
 
   normal:
     black: '0x222222'
@@ -22,7 +22,7 @@ colors:
     blue: '0x0000aa'
     magenta: '0xaa00aa'
     cyan: '0x00aaaa'
-    white: '0x666666'
+    white: '0xaaaaaa'
 
 font:
   normal:

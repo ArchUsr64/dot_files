@@ -38,9 +38,13 @@ scrolling:
   history: 10000
 
 bell:
+  color: '#ffdddd'
   duration: 100
 
 selection:
   save_to_clipboard: true
 
 live_config_reload: true
+
+key_bindings:
+  - { key: V, mods: Control, action: ToggleViMode }

@@ -9,6 +9,3 @@ indent = { tab-width = 8, unit = "\t"}
 
 [[language]]
 name = "rust"
-
-[language.config.checkOnSave]
-command = "clippy"

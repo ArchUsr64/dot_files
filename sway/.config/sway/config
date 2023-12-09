@@ -44,6 +44,9 @@ set {
 	$terminal alacritty
 	$fzf_gui fuzzel -d --config=.config/fuzzel.ini
 	$menu $(find `echo $PATH | tr : ' '` -type f 2>/dev/null | sort -r | $fzf_gui)
+	$win_menu swaymsg \[con_id=`swaymsg -t get_tree | jq -r '.. | objects | select(.type == "con" and .name != null) | "\(.name) \(.marks) \(.id)"' | $fzf_gui | awk '{print $NF}'`] focus
+	$common_tags music,mail,whatsapp,gmail,game,noise,browser
+	$get_tag (swaymsg -t get_marks | jq -r '.[]' && echo $common_tags | tr , '\n') | sort | uniq | $fzf_gui
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
 	$lock swaylock
 }
@@ -82,9 +85,11 @@ bindsym {
 	$mod+semicolon exec $terminal
 	$mod+v exec $browser
 	$mod+s exec $menu
+	$mod+w exec $win_menu
+	$mod+t exec "swaymsg -- mark --toggle `$get_tag`"
 	$mod+Shift+s exec $screenshot
 	$mod+Shift+p exec $lock
-	$mod+Shift+e exec "swaynag -e bottom -y overlay -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'swaymsg exit'"
+	$mod+Shift+e exec "swaynag -e bottom -y overlay -t warning -m 'Exit?' -B 'Yes, exit sway' 'swaymsg exit'"
 
 	$mod+q kill
 	$mod+c split toggle

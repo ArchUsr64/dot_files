@@ -42,7 +42,8 @@ set {
 	$right l
 	$browser chromium
 	$terminal alacritty
-	$menu /bin/`ls /bin | fuzzel -I -d --layer=overlay --config=.config/fuzzel.ini`
+	$fzf_gui fuzzel -d --config=.config/fuzzel.ini
+	$menu $(find `echo $PATH | tr : ' '` -type f 2>/dev/null | sort -r | $fzf_gui)
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
 	$lock swaylock
 }

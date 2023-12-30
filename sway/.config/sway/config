@@ -42,11 +42,10 @@ set {
 	$right l
 	$browser chromium
 	$terminal alacritty
-	$fzf_gui fuzzel -d --config=.config/fuzzel.ini
-	$menu $(find `echo $PATH | tr : ' '` -type f 2>/dev/null | sort -r | $fzf_gui)
-	$win_menu swaymsg \[con_id=`swaymsg -t get_tree | jq -r '.. | objects | select(.type == "con" and .name != null) | "\(.name) \(.marks) \(.id)"' | $fzf_gui | awk '{print $NF}'`] focus
+	$menu $(find $(echo $PATH | tr : ' ') -maxdepth 1 2>/dev/null | sort | fzf_gui)
+	$win_menu swaymsg \[con_id=$(swaymsg -t get_tree | jq -r '.. | objects | select(.type == "con" and .name != null) | "\(.name) \(.marks) \(.id)"' | fzf_gui | awk '{print $NF}')] focus
 	$common_tags music,mail,whatsapp,gmail,game,noise,browser
-	$get_tag (swaymsg -t get_marks | jq -r '.[]' && echo $common_tags | tr , '\n') | sort | uniq | $fzf_gui
+	$get_tag (swaymsg -t get_marks | jq -r '.[]' && echo $common_tags | tr , '\n') | sort | uniq | fzf_gui
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
 	$lock swaylock
 }

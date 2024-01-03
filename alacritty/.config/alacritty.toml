@@ -1,0 +1,45 @@
+live_config_reload = true
+
+[bell]
+color = "#ffdddd"
+duration = 100
+
+[colors.bright]
+black = "0x444444"
+blue = "0x2222ff"
+cyan = "0x22ffff"
+green = "0x44ff44"
+magenta = "0xff22ff"
+red = "0xff0000"
+white = "0xcccccc"
+yellow = "0xdddd00"
+
+[colors.normal]
+black = "0x222222"
+blue = "0x0000aa"
+cyan = "0x00aaaa"
+green = "0x22aa22"
+magenta = "0xaa00aa"
+red = "0xdd2222"
+white = "0xaaaaaa"
+yellow = "0xcccc00"
+
+[colors.primary]
+background = "0xffffff"
+foreground = "0x000000"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+style = "Regular"
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = true

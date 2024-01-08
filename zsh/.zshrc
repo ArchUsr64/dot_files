@@ -39,6 +39,8 @@ HISTSIZE=10000
 SAVEHIST=20000
 bindkey -e
 
+bindkey -s ^f "^utmux-sessionizer\n"
+
 zstyle :compinstall filename '/home/me/.zshrc'
 autoload -U select-word-style
 select-word-style bash

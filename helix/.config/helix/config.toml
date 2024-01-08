@@ -29,6 +29,7 @@ select = "underline"
 [keys.normal]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
+"C-f" = ":run-shell-command tmux new-window tmux-sessionizer"
 
 [keys.select]
 "{" = "goto_prev_paragraph"

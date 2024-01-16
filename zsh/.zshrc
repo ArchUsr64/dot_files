@@ -53,3 +53,4 @@ compinit
 source ~/.profile
 
 unsetopt share_history
+bindkey \^U backward-kill-line

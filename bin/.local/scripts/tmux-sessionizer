@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
   dir_name=$1
 else
-  dir_name=$(find ~ ~/work ~/personal -mindepth 1 -maxdepth 1 -type d | sort | fzf)
+  dir_name=$(find ~ ~/academics ~/experiments ~/work ~/personal -mindepth 1 -maxdepth 1 -type d | sort | fzf)
 fi
 
 if [[ -z $dir_name ]]; then

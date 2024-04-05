@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 
 options='cpp c rust python awk bash find sed make tr kill git git-commit git-rebase git-status git-diff cargo'
-all_languages='arduino assembly awk bash basic bf c chapel clean clojure coffee cpp csharp d dart delphi dylan eiffel elixir elisp elm erlang factor fortran forth fsharp go groovy haskell java js julia kotlin latex lisp lua matlab nim ocaml octave perl perl6 php pike python python3 r racket ruby rust scala scheme solidity swift tcsh tcl objective-c vb vbnet'
 subtopics='hello :learn :list'
 
 selection=$(echo $options | tr ' ' '\n' | sort | fzf --print-query | tail -n 1)
 query=$(echo $subtopics | tr ' ' '\n' | sort | fzf --print-query | tail -n 1)
 
-if echo $all_languages | grep -qs $selection; then
-  curl -s "https://cht.sh/$selection/$(echo $query | tr ' ' '+')?style=default" | less
-else
-  curl -s "https://cht.sh/$selection~$query?style=default" | less
-fi
+curl -s "https://cht.sh/$selection/$(echo $query | tr ' ' '+')?style=default" | less

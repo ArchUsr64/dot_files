@@ -50,6 +50,8 @@ set {
 	$lock swaylock
 }
 
+exec $terminal -e sudo wpa_startup
+
 floating_modifier $mod
 
 bindsym {
@@ -73,6 +75,7 @@ bindsym {
 	$mod+s exec $menu
 	$mod+w exec $win_menu
 	$mod+t exec "swaymsg -- mark --toggle `$get_tag`"
+	$mod+x exec wl-gammactl -c -1.000 -b 2.000 -g 1.000
 	$mod+Shift+s exec $screenshot
 	$mod+Shift+p exec $lock
 	$mod+Shift+e exec "swaynag -e bottom -y overlay -t warning -m 'Exit?' -B 'Yes, exit sway' 'swaymsg exit'"

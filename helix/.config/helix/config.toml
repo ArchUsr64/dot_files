@@ -29,7 +29,7 @@ select = "underline"
 [keys.normal]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
-"C-f" = ":run-shell-command tmux new-window tmux-sessionizer"
+"C-q" = ":run-shell-command tmux new-window tmux-sessionizer"
 "C-t" = ":open ~/personal/TODO.md"
 
 [keys.select]

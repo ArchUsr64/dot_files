@@ -39,7 +39,7 @@ HISTSIZE=10000
 SAVEHIST=20000
 bindkey -e
 
-bindkey -s ^f "^utmux-sessionizer\n"
+bindkey -s ^q "^utmux-sessionizer\n"
 bindkey -s ^t "^uhx $HOME/personal/TODO.md\n"
 
 zstyle :compinstall filename '/home/me/.zshrc'

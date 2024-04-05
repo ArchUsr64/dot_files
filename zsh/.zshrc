@@ -54,3 +54,7 @@ source ~/.profile
 
 unsetopt share_history
 bindkey \^U backward-kill-line
+
+if [ $TTY = "/dev/tty1" ]; then
+  sway
+fi

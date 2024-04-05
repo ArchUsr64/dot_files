@@ -1,6 +1,7 @@
 theme = "mytheme"
 
 [editor]
+true-color = true
 line-number = "relative"
 cursorline = true
 auto-format = true

@@ -4,8 +4,22 @@ auto-format = false
 indent = { tab-width = 8, unit = "\t"}
 
 [[language]]
+name = "cpp"
+auto-format = false
+indent = { tab-width = 8, unit = "\t"}
+
+[[language]]
 name = "diff"
 indent = { tab-width = 8, unit = "\t"}
 
 [[language]]
 name = "rust"
+
+[[language]]
+name = "cpp"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'

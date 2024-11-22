@@ -41,10 +41,6 @@ set {
 	$right l
 	$browser chromium
 	$terminal alacritty
-	$menu $(find $(echo $PATH | tr : ' ') -maxdepth 1 2>/dev/null | sort | fzf_gui)
-	$win_menu swaymsg \[con_id=$(swaymsg -r -t get_tree | jq -r '.. | objects | select(.type == "con" and .name != null) | "\(.marks) \(.name) \(.id)"' | fzf_gui | awk '{print $NF}')] focus
-	$common_tags music,mail,whatsapp,gmail,game,noise,browser
-	$get_tag (swaymsg -r -t get_marks | jq -r '.[]' && echo $common_tags | tr , '\n') | sort | uniq | fzf_gui
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
 	$lock swaylock
 }
@@ -72,9 +68,6 @@ bindsym {
 	$mod+semicolon exec $terminal
 	$mod+v exec $browser
 	$mod+s exec $menu
-	$mod+w exec $win_menu
-	$mod+t exec "swaymsg -- mark --toggle `$get_tag`"
-	$mod+x exec wl-gammactl -c -1.000 -b 2.000 -g 1.000
 	$mod+Shift+s exec $screenshot
 	$mod+Shift+p exec $lock
 	$mod+Shift+e exec "swaynag -e bottom -y overlay -t warning -m 'Exit?' -B 'Yes, exit sway' 'swaymsg exit'"

@@ -41,11 +41,12 @@ set {
 	$right l
 	$browser chromium
 	$terminal alacritty
+	$menu $(find $(echo $PATH | tr : ' ') -maxdepth 1 2>/dev/null | sort | fzf_gui)
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
 	$lock swaylock
 }
 
-exec $terminal -e sudo wpa_startup
+exec $terminal
 
 floating_modifier $mod
 

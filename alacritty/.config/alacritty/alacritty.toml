@@ -1,0 +1,23 @@
+[general]
+import = ["colors.toml"]
+live_config_reload = true
+
+[bell]
+duration = 100
+
+[font]
+size = 14.0
+normal = {family = "Monaspace Xenon Frozen", style = "Light"}
+italic = {family = "Monaspace Radon Frozen", style = "Italic"}
+bold = {family = "Monaspace Krypton Frozen", style = "ExtraBold"}
+bold_italic = {family = "Monaspace Xenon Frozen", style = "Bold Italic"}
+
+[scrolling]
+history = 100_000
+multiplier = 1
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = true

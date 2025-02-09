@@ -1,4 +1,4 @@
-font pango:Fira Code Retina 12
+font pango:Monaspace Xenon Frozen 12
 
 exec sh $HOME/dot_files/scripts/disable_builtin_keyboard.sh
 
@@ -120,7 +120,7 @@ client.placeholder      $null__ $null__ $null__ $null__   $null__
 client.background       $null__
 
 bar {
-	font FiraCode SemiBold, 14
+	font Monaspace Xenon Frozen, 14
 	mode hide
 	position top
 	modifier $mod

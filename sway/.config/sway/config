@@ -1,6 +1,6 @@
 font pango:Fira Code Retina 12
 
-exec $SHELL $HOME/dot_files/scripts/*
+exec sh $HOME/dot_files/scripts/disable_builtin_keyboard.sh
 
 bindsym {
 	XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -29,9 +29,7 @@ input {
 	}
 }
 
-smart_borders on
-hide_edge_borders smart
-default_border normal 3
+default_border pixel 1
 
 set {
 	$mod Mod1
@@ -107,12 +105,34 @@ bindsym {
 	$mod+p workspace prev
 }
 
+set {
+	$white_ #ffffff
+	$red___ #ff0000
+	$null__ #000000
+}
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $white_ $null__ $null__ $red___   $white_
+client.focused_inactive $null__ $null__ $null__ $null__   $null__
+client.unfocused        $null__ $null__ $null__ $null__   $null__
+client.urgent           $red___ $null__ $null__ $null__   $null__
+client.placeholder      $null__ $null__ $null__ $null__   $null__
+client.background       $null__
+
 bar {
-	font FiraCode SemiBold, 12
+	font FiraCode SemiBold, 14
 	mode hide
 	position top
 	modifier $mod
 	status_command i3status
+	colors {
+		background #000000ff
+		separator $red___
+		# class            border  backgr. text
+		focused_workspace  $white_ $white_ $null__
+		inactive_workspace $white_ $null__ $white_
+		urgent_workspace   $white_ $red___ $null__
+	}
 }
 
 include /etc/sway/config.d/*

@@ -31,8 +31,8 @@ function git_branch_name() {
   echo $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
 }
 
-PROMPT='%B%K{10}%F{black}%*%f%k%b%F{5}%~%F{green}$(git_branch_name)
-%B%K{10}%F{black}%#%f%k%b '
+PROMPT='%F{8}[%*]%f%b%F{5}%~%F{10}$(git_branch_name)
+%B%F{8}%#%f%b '
 
 HISTFILE=~/.histfile
 HISTSIZE=10000

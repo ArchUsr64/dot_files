@@ -6,7 +6,7 @@ live_config_reload = true
 duration = 100
 
 [font]
-size = 14.0
+size = 16.0
 normal = {family = "Monaspace Xenon Frozen", style = "Light"}
 italic = {family = "Monaspace Radon Frozen", style = "Italic"}
 bold = {family = "Monaspace Krypton Frozen", style = "ExtraBold"}

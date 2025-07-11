@@ -2,12 +2,12 @@
 # Generates the colors for alacritty config
 
 LIGHT_LOW=6
-LIGHT_HIGH=f
-NORMAL_LOW=2
-NORMAL_HIGH=f
+LIGHT_HIGH=b
+NORMAL_LOW=4
+NORMAL_HIGH=8
 
-BG=1
-FG=c
+BG=f
+FG=0
 
 OUT_FILE=colors.toml
 

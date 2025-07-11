@@ -37,7 +37,7 @@ set {
 	$down j
 	$left h
 	$right l
-	$browser chromium
+	$browser firefox
 	$terminal alacritty
 	$menu $(find $(echo $PATH | tr : ' ') -maxdepth 1 2>/dev/null | sort | fzf_gui)
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png

@@ -18,6 +18,11 @@ name = "rust"
 [[language]]
 name = "cpp"
 
+[[language]]
+name = "bitbake"
+indent = { tab-width = 4, unit = " " }
+file-types = ["bb", "bbappend", "bbclass", "conf", "inc"]
+
 [language.auto-pairs]
 '(' = ')'
 '{' = '}'

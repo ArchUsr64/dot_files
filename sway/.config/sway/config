@@ -30,6 +30,7 @@ input {
 }
 
 default_border pixel 1
+hide_edge_borders both
 
 set {
 	$mod Mod1
@@ -41,7 +42,7 @@ set {
 	$terminal alacritty
 	$menu $(find $(echo $PATH | tr : ' ') -maxdepth 1 2>/dev/null | sort | fzf_gui)
 	$screenshot grim -g "$(slurp -d)" - | wl-copy -t image/png
-	$lock swaylock
+	$lock $(echo | fzf_gui | swaylock --font-size 50)
 }
 
 exec $terminal
